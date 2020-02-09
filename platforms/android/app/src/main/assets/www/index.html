@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Hard Blues Radio Station</title>
+    </head>
+    <body>
+    <div class="app">
+        <!--===========  container ====================-->
+        <div class="wrap" id="app-wrap">
+            <div class="image">
+                <div class="image_circle border_radius">
+                    <div class="image_circle_layer border_radius overflow_h">
+                        <img class="border_radius" src="img/Logo-hardblues.gif">
+                    </div>
+                </div>
+            </div>
+            <!--============= DISPLAY ==========-->
+            <div class="display-wrap">
+                <div class="display_border">
+                    <div class="display_block">
+                        <ul class="display_tittle" id="display-tittle">
+                            <li>Hard Blues Radio Station </li>
+                            <li>Hard Blues Radio Station</li>
+                        </ul>
+                        <p class="info_text" id="alert-text">Click the button On/Off</p>
+                        <p class="display_time" id="display-time">00:00:00</p>
+                    </div>
+                </div>
+            </div>
+            <!--============ BUTONS ==============-->
+            <div class="buttons-control">
+                <div class="button_wrap_down">
+                    <button class="button_vol_down" id="volDown" disabled>
+                        <div class="button_sp shadow_out">
+                            <div class="button_sp_border">
+                                <div class="button_sp_layer shadow_in">
+                                    <div class="button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300" style="max-width: 100%; max-height: 100%;">
+                                            <path id="svg-icon-down" d="M203.94517 290.20924c-2.23015-1.04206-24.95515-17.32526-50.5-36.1849-25.54485-18.85963-50.27018-36.86113-54.945175-40.00334l-8.5-5.7131-9.5.90894c-5.225.49992-20.075.7776-32.999995.61707-22.9692-.28529-23.62618-.35105-29.08648-2.9117-7.10099-3.33005-12.46364-8.6927-15.7937-15.7937L0 185.54203V99.542031l2.46807-5c3.58021-7.25308 10.53023-13.79444 17.37856-16.35673 5.25875-1.96755 7.63152-2.14165 28.94089-2.12346 24.257365.0207 35.612995 1.02976 39.382315 3.49951 4.31728 2.8288 9.01666-.19988 66.830165-43.07095 23.64999-17.53744 44.98876-32.9127302 47.41947-34.1673102 6.4187-3.31293 12.13357-3.07417 15.87082.66308 1.64386 1.64387 3.44443 4.93098 4.07692 7.4428202 1.54256 6.12605 1.60522 265.371569.0655 270.916339-2.50281 9.01294-10.2348 12.72007-18.48752 8.86391zm83.55482-144.16721v-32H479.5v64H287.49999v-32z" fill="#7E7D85" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="button_wrap_sm" id="button-sm">
+                    <div class="spinner_load">
+                        <div class="lds-roller">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <button class="button_off" id="button_on_off">
+                        <div class="button_sp shadow_out">
+                            <div class="button_sp_border">
+                                <div class="button_sp_layer shadow_in">
+                                    <p class="button_text">Loading</p>
+                                    <div class="button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 520" style="max-width: 100%; max-height: 100%;">
+                                            <path id="svg-icon-on" d="M219.026 512.265c-58.265-5.338-111.908-30.591-151.153-71.156A238.692 238.692 0 011.971 299.382c-1.485-14.552-.707-44.623 1.527-59 7.452-47.953 30.507-94.032 64.028-127.972 12.826-12.986 26.84-24.527 34.163-28.134 19.998-9.851 42.612-1.853 52.61 18.606 2.892 5.917 3.176 7.351 3.17 16-.005 7.635-.47 10.668-2.372 15.451-2.522 6.347-3.8 7.743-26.812 29.292-31.443 29.443-48.37 68.493-48.415 111.69-.028 27.217 4.832 48.015 16.785 71.828 19.042 37.936 50.637 65.2 91.32 78.802 73.59 24.605 155.2-9.418 189.594-79.042 11.977-24.244 16.642-44.346 16.613-71.589-.045-43.564-17.188-82.797-49.13-112.432-21.618-20.059-23.572-22.196-26.097-28.549-1.898-4.776-2.368-7.828-2.378-15.451-.013-8.747.246-10.02 3.265-16.066 7.889-15.801 22.455-24.207 39.007-22.511 8.747.896 16.505 4.745 27.677 13.73 44.346 35.662 75.17 89.348 84.028 146.347 2.234 14.377 3.013 44.448 1.528 59-3.95 38.698-17.094 75.2-39.036 108.41-36.348 55.011-95.494 92.363-162.52 102.633-9.751 1.494-42.503 2.665-51.5 1.84zm11.78-236.414c-11.94-2.01-24.341-11.528-29.577-22.7l-2.703-5.77V30.383l2.68-5.718c3.16-6.74 10.29-14.695 16.361-18.253 19.435-11.39 44.468-3.475 54.692 17.29l3.267 6.638.264 106.47c.291 117.678.576 111.996-6.097 121.704-8.786 12.785-24.45 19.77-38.886 17.338z" fill="#7E7D85" stroke="#000" stroke-width="2.4"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="button_wrap_up">
+                    <button class="button_vol_up" id="volUp" disabled>
+                        <div class="button_sp shadow_out">
+                            <div class="button_sp_border">
+                                <div class="button_sp_layer shadow_in">
+                                    <div class="button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300" style="max-width: 100%; max-height: 100%;">
+                                            <path id="svg-icon-up" d="M203.96903 290.11464c-2.2171-1.0362-24.7171-17.158-50-35.82624-25.283-18.66823-50.019-36.68926-54.969-40.04673L90 208.13718l-9.5.94168c-5.225.51792-20.075.81033-33 .6498-22.97417-.28535-23.62306-.35034-29-2.90468-6.9962-3.32358-12.56362-8.891-15.8872-15.8872l-2.6128-5.5V99.436783l2.46807-5c3.58021-7.25308 10.53022-13.79444 17.37855-16.35673 5.25875-1.96755 7.63153-2.14165 28.94089-2.12346 24.25738.0207 35.61301 1.02976 39.38233 3.49951 4.32176 2.83173 9.11959-.25924 66.83019-43.054696 23.65-17.53775 44.9887-32.9168098 47.4195-34.1757098 7.9933-4.13984 15.3026-2.41294 18.6956 4.41704 1.814 3.6513498 1.8948 8.8090098 2.1492 137.1339528.1821 91.85097-.067 134.56872-.7991 137.28916-2.46 9.13598-10.2039 12.92444-18.4962 9.04879zm147.531-80.17786v-32h-64v-64h64V49.936787h64v63.999993H479.5v64H415.50003v64h-64v-32z" fill="#7E7D85" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <br>
+            </div>
+            <!--=============== indicator volume =============-->
+            <div class="volume indicator">
+                <ul class="indicator_block" id="wrap-vol">
+                    <li class="active">1</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <!--============ info ===============-->
+            <div>
+                <p class="network_info"></p>
+                <p class="additional_info"></p>
+                <p id="error_text"></p>
+            </div>
+            <div class="fotter">
+                <h3>Contacts</h3>
+                <p class="textEmail">honcharov.ivan1987@gmail.com</p>
+                <div class="socBlok">
+                    <a href="https://www.facebook.com/ivan.goncharov.180" class="socBut"  target="_blank" title="facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="10 -40 310 390">
+                            <path d="M81.703 165.106h33.981V305a5 5 0 005 5H178.3a5 5 0 005-5V165.765h39.064a5 5 0 004.967-4.429l5.933-51.502a5 5 0 00-4.966-5.572h-44.996V71.978c0-9.732 5.24-14.667 15.576-14.667h29.42a5 5 0 005-5V5.037a5 5 0 00-5-5h-40.545A39.746 39.746 0 00185.896 0c-7.035 0-31.488 1.381-50.804 19.151-21.402 19.692-18.427 43.27-17.716 47.358v37.752H81.703a5 5 0 00-5 5v50.844a5 5 0 005 5.001z"/>
+                        </svg>
+                    </a>
+                    <a href="https://vk.com/hardblues" class="socBut"  target="_blank" title="vk.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304.36 304.36"><path d="M261.945 175.576c10.096 9.857 20.752 19.131 29.807 29.982 4 4.822 7.787 9.798 10.684 15.394 4.105 7.955.387 16.709-6.746 17.184l-44.34-.02c-11.436.949-20.559-3.655-28.23-11.474-6.139-6.253-11.824-12.908-17.727-19.372-2.42-2.642-4.953-5.128-7.979-7.093-6.053-3.929-11.307-2.726-14.766 3.587-3.523 6.421-4.322 13.531-4.668 20.687-.475 10.441-3.631 13.186-14.119 13.664-22.414 1.057-43.686-2.334-63.447-13.641-17.422-9.968-30.932-24.04-42.691-39.971-22.895-31.021-40.428-65.108-56.186-100.15C-2.01 76.458.584 72.22 9.295 72.07c14.465-.281 28.928-.261 43.41-.02 5.879.086 9.771 3.458 12.041 9.012 7.826 19.243 17.402 37.551 29.422 54.521 3.201 4.518 6.465 9.036 11.113 12.216 5.142 3.521 9.057 2.354 11.476-3.374 1.535-3.632 2.207-7.544 2.553-11.434 1.146-13.383 1.297-26.743-.713-40.079-1.234-8.323-5.922-13.711-14.227-15.286-4.238-.803-3.607-2.38-1.555-4.799 3.564-4.172 6.916-6.769 13.598-6.769h50.111c7.889 1.557 9.641 5.101 10.721 13.039l.043 55.663c-.086 3.073 1.535 12.192 7.07 14.226 4.43 1.448 7.35-2.096 10.008-4.905 11.998-12.734 20.561-27.783 28.211-43.366 3.395-6.852 6.314-13.968 9.143-21.078 2.096-5.276 5.385-7.872 11.328-7.757l48.229.043c1.43 0 2.877.021 4.262.258 8.127 1.385 10.354 4.881 7.844 12.817-3.955 12.451-11.65 22.827-19.174 33.251-8.043 11.129-16.645 21.877-24.621 33.072-7.328 10.223-6.746 15.376 2.357 24.255zm0 0" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                    </a>
+                    <button class="socBut" id="send" title="send e-mail">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.001 330.001"  stroke="#000" stroke-width="0">
+                            <g stroke="none">
+                                <path d="M173.871 177.097a14.982 14.982 0 01-8.87 2.903 14.98 14.98 0 01-8.871-2.903L30 84.602.001 62.603 0 275.001c.001 8.284 6.716 15 15 15L315.001 290c8.285 0 15-6.716 15-14.999V62.602l-30.001 22-126.129 92.495z"/>
+                                <path d="M165.001 146.4L310.087 40.001 19.911 40z"/>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
