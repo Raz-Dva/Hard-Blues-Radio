@@ -1,5 +1,6 @@
 I created this android app for my Hard Blues Radio Station https://zeno.fm/hardblues/
-You can also use the app by modifying it in the hard-Blues-Radio / platforms/android / app/src / main/assets/www/js / index file.js line 35   src: 'http://stream.zeno.fm/qd8hws5efseuv' (this is my address)    Enter your address to connect your radio.
+This application was written in js the main file with the code https://github.com/Raz-Dva/Hard-Blues-Radio/blob/master/platforms/android/app/src/main/assets/www/js/index.js
+You can also use the app by modifying it in the https://github.com/Raz-Dva/Hard-Blues-Radio/blob/master/platforms/android/app/src/main/assets/www/js/index.js#L35 line 35   src: 'http://stream.zeno.fm/qd8hws5efseuv' (this is my address)    Enter your address to connect your radio.
 
 You can download the build file here https://www.dropbox.com/sh/t03841fc8ine8hg/AAARqOrITqRznN10aeMw3Jy4a?dl=0 
 or https://drive.google.com/drive/folders/1gaYjfjlU-rGg_msVbPA1FO-5eOWbLiad
