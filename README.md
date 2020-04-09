@@ -7,11 +7,11 @@ You can download the build file here [dropbox](https://www.dropbox.com/sh/t03841
 or [google drive](https://drive.google.com/drive/folders/1gaYjfjlU-rGg_msVbPA1FO-5eOWbLiad)
 
 # Installed_plugins:
--cordova-plugin-whitelist
--cordova-plugin-media
--cordova-plugin-device
--cordova-plugin-network-information
--cordova-plugin-email-composer
+- cordova-plugin-whitelist
+- cordova-plugin-media
+- cordova-plugin-device
+- cordova-plugin-network-information
+- cordova-plugin-email-composer
 
 ### Installation   
 You can directly import github projects into Android Studio. 
