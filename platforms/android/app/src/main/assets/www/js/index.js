@@ -57,18 +57,12 @@
         document.addEventListener('deviceready', app.ready, false);
     },
     ready: function(){
-        //app.queryMap = app.querySelect;
-        //var n = this.track.volume;
-        //document.querySelectorAll(.indicator_block li:nth-child(n));
-
-
         app.checkConnection();
         let src = app.track.src;
         app.statusConnect = true;
         app.media = new Media(src, app.ftw, app.wtf, app.statusChange);
         app.calcVol(app.track.volume );
         app.addListeners();
-
     },
     checkConnection: function checkConnection() {
                          var networkState = navigator.connection.type;
@@ -84,16 +78,13 @@
                          document.querySelector(".network_info").innerHTML = states[networkState] + "";
                          app.connectionState = states;
                      },
-    ftw: function(){
-        //console.log( 'success doing something');
-    }, // session completed successfully
-
+//     ftw: function(){       
+//     }, 
     wtf: function(error){
         app.querySelect.errorText.innerHTML = error.code + " " +  app.err[error.code];
         console.log("ERROR " + error.code + " " +  app.err[error.code]);
         app.stop();
     },
-
     statusChange: function(status){
         if(status == 1){
             app.querySelect.buttonSm.classList.add("loading");
