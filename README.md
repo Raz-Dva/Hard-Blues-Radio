@@ -23,3 +23,4 @@ The github repo will be created as a new project in android studio.
 
 If you have any questions, please contact me  my.poshta.goncharov@gmail.com
 
+![alt text](https://github.com/Raz-Dva/Hard-Blues-Radio/blob/master/Screenshot_20210131-102145.png?raw=true)
